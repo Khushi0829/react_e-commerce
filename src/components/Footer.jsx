@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <h2 className="logo">E-<span>SHOP</span></h2>
+            <h2 className="logo">FIWI<span>STORE</span></h2>
             <p>Your one-stop destination for premium fashion and electronics. Experience the best of online shopping with us.</p>
             <div className="social-links">
               <a href="#"><i className="fa-brands fa-facebook-f"></i></a>
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; 2026 E-SHOP. All rights reserved. Designed with <i className="fa-solid fa-heart text-danger"></i></p>
+          <p>&copy; 2026 FIWISTORE. All rights reserved. Designed with <i className="fa-solid fa-heart text-danger"></i></p>
           <div className="payment-methods">
             <i className="fa-brands fa-cc-visa"></i>
             <i className="fa-brands fa-cc-mastercard"></i>

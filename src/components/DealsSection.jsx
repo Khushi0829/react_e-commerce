@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './DealsSection.css';
 
 const deals = [
@@ -59,6 +59,43 @@ const deals = [
 ];
 
 const DealsSection = () => {
+    const [timeLeft, setTimeLeft] = useState({
+        hours: 8,
+        minutes: 45,
+        seconds: 12
+    });
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setTimeLeft(prevTime => {
+                let { hours, minutes, seconds } = prevTime;
+                
+                if (seconds > 0) {
+                    seconds--;
+                } else {
+                    if (minutes > 0) {
+                        minutes--;
+                        seconds = 59;
+                    } else {
+                        if (hours > 0) {
+                            hours--;
+                            minutes = 59;
+                            seconds = 59;
+                        } else {
+                            clearInterval(timer);
+                        }
+                    }
+                }
+                
+                return { hours, minutes, seconds };
+            });
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    const formatTime = (time) => time.toString().padStart(2, '0');
+
     return (
         <section className="deals-section container-fluid py-5">
             <div className="section-header d-flex justify-content-between align-items-end mb-4">
@@ -69,11 +106,11 @@ const DealsSection = () => {
                 <div className="header-right d-none d-md-flex align-items-center gap-2">
                     <span className="text-muted fw-bold">Ends In: </span>
                     <div className="countdown-timer d-flex gap-2">
-                        <div className="timer-box">08</div>
+                        <div className="timer-box">{formatTime(timeLeft.hours)}</div>
                         <span>:</span>
-                        <div className="timer-box">45</div>
+                        <div className="timer-box">{formatTime(timeLeft.minutes)}</div>
                         <span>:</span>
-                        <div className="timer-box">12</div>
+                        <div className="timer-box">{formatTime(timeLeft.seconds)}</div>
                     </div>
                 </div>
             </div>

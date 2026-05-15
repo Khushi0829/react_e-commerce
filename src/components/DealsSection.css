@@ -1,7 +1,7 @@
 .deals-section {
     padding-left: 5% !important;
     padding-right: 5% !important;
-    background: #ffffff;
+    background: var(--light-color);
 }
 
 .section-title {
@@ -18,12 +18,12 @@
 }
 
 .countdown-timer {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Inter', sans-serif;
 }
 
 .timer-box {
-    background: var(--text-dark);
-    color: white;
+    background: var(--dark-color);
+    color: #fff;
     padding: 4px 8px;
     border-radius: 4px;
     font-weight: 700;
@@ -38,11 +38,11 @@
 }
 
 .deal-card {
-    background: white;
+    background: #fff;
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid #f1f5f9;
+    border: 1px solid var(--border-color);
 }
 
 .deal-card:hover {
@@ -55,7 +55,7 @@
     position: relative;
     height: 320px;
     overflow: hidden;
-    background: #f8fafc;
+    background: var(--light-color);
 }
 
 .deal-image {
@@ -73,8 +73,8 @@
     position: absolute;
     top: 15px;
     left: 15px;
-    background: #ef4444;
-    color: white;
+    background: var(--primary-color);
+    color: #fff;
     padding: 4px 10px;
     font-size: 0.8rem;
     font-weight: 700;
@@ -105,7 +105,7 @@
 
 .add-to-cart-btn {
     width: 100%;
-    background: white;
+    background: #fff;
     color: var(--text-dark);
     border: none;
     padding: 12px;
@@ -123,7 +123,7 @@
 
 .add-to-cart-btn:hover {
     background: var(--primary-color);
-    color: white;
+    color: #fff;
 }
 
 .deal-quick-actions {
@@ -141,7 +141,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: white;
+    background: #fff;
     border: none;
     display: flex;
     align-items: center;
@@ -152,7 +152,7 @@
 
 .deal-quick-actions button:hover {
     background: var(--primary-color);
-    color: white;
+    color: #fff;
 }
 
 .deal-info h3 {
@@ -201,7 +201,7 @@
 
 .view-all-deals-btn:hover {
     background: var(--text-dark);
-    color: white;
+    color: #fff;
 }
 
 /* Responsive Styles */

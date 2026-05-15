@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const categories = [
@@ -90,24 +91,24 @@ const Navbar = () => {
                 </button>
 
                 <div className="logo">
-                    <a href="/" className="text-decoration-none">
+                    <Link to="/" className="text-decoration-none">
                         <h2>FIWI<span>STORE</span></h2>
-                    </a>
+                    </Link>
                 </div>
 
                 <ul className="nav-links">
                     {categories.slice(0, 4).map((category, index) => (
                         <li key={index} className="nav-item">
-                            <a href={`#${category.name.toLowerCase()}`} className="nav-link">
+                            <Link to={`/${category.name.toLowerCase()}`} className="nav-link">
                                 {category.name}
-                            </a>
+                            </Link>
                             <div className="mega-menu">
                                 {category.subcategories.map((sub, idx) => (
                                     <div key={idx} className="mega-menu-column">
                                         <h4>{sub.title}</h4>
                                         <ul className="mega-menu-links">
                                             {sub.items.map((item, i) => (
-                                                <li key={i}><a href="/">{item}</a></li>
+                                                <li key={i}><Link to="/">{item}</Link></li>
                                             ))}
                                         </ul>
                                     </div>
@@ -116,7 +117,7 @@ const Navbar = () => {
                         </li>
                     ))}
                     <li className="nav-item">
-                        <a href="/shop" className="nav-link">Shop</a>
+                        <Link to="/shop" className="nav-link">Shop</Link>
                     </li>
                 </ul>
 
@@ -138,17 +139,30 @@ const Navbar = () => {
                                 </button>
                             </div>
                         </li>
-                        <li className="d-none d-md-block">
-                            <a href="/account"><i className="fa-solid fa-user"></i></a>
+                        <li className="d-none d-md-block user-dropdown-container">
+                            <i className="fa-solid fa-user"></i>
+                            <div className="user-dropdown">
+                                <h3>Welcome</h3>
+                                <p>To access account and manage orders</p>
+                                <div className="dropdown-btns">
+                                    <Link to="/login" className="login-btn">Login / Signup</Link>
+                                </div>
+                                <hr />
+                                <ul className="dropdown-links">
+                                    <li><Link to="/account">My Account</Link></li>
+                                    <li><Link to="/orders">Orders</Link></li>
+                                    <li><Link to="/contact">Contact Us</Link></li>
+                                </ul>
+                            </div>
                         </li>
                         <li>
-                            <a href="/wishlist"><i className="fa-regular fa-heart"></i></a>
+                            <Link to="/wishlist"><i className="fa-regular fa-heart"></i></Link>
                         </li>
                         <li className="cart-icon">
-                            <a href="/cart">
+                            <Link to="/cart">
                                 <i className="fa-solid fa-bag-shopping"></i>
                                 <span className="cart-count">3</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -210,7 +224,7 @@ const Navbar = () => {
                                         
                                         <ul className={`mobile-mega-mega-menu ${activeMobileSubCategory === `${index}-${idx}` ? 'active' : ''}`}>
                                             {sub.items.map((item, i) => (
-                                                <li key={i}><a href="/" onClick={toggleMobileMenu}>{item}</a></li>
+                                                <li key={i}><Link to="/" onClick={toggleMobileMenu}>{item}</Link></li>
                                             ))}
                                         </ul>
                                     </div>
@@ -219,26 +233,26 @@ const Navbar = () => {
                         </li>
                     ))}
                     <li className="mobile-nav-item">
-                        <a href="/shop" className="mobile-nav-link" onClick={toggleMobileMenu}>
+                        <Link to="/shop" className="mobile-nav-link" onClick={toggleMobileMenu}>
                             Shop
-                        </a>
+                        </Link>
                     </li>
                 </ul>
                 
                 <div className="mt-auto pt-4 border-top mobile-drawer-footer">
                     <div className="d-flex justify-content-around">
-                         <a href="/account" className="text-dark d-flex flex-column align-items-center gap-1 text-decoration-none">
+                         <Link to="/account" onClick={toggleMobileMenu} className="text-dark d-flex flex-column align-items-center gap-1 text-decoration-none">
                             <i className="fa-solid fa-user fs-5"></i>
                             <span style={{fontSize: '10px'}}>Account</span>
-                         </a>
-                         <a href="/wishlist" className="text-dark d-flex flex-column align-items-center gap-1 text-decoration-none">
+                         </Link>
+                         <Link to="/wishlist" onClick={toggleMobileMenu} className="text-dark d-flex flex-column align-items-center gap-1 text-decoration-none">
                             <i className="fa-regular fa-heart fs-5"></i>
                             <span style={{fontSize: '10px'}}>Wishlist</span>
-                         </a>
-                         <a href="/cart" className="text-dark d-flex flex-column align-items-center gap-1 text-decoration-none">
+                         </Link>
+                         <Link to="/cart" onClick={toggleMobileMenu} className="text-dark d-flex flex-column align-items-center gap-1 text-decoration-none">
                             <i className="fa-solid fa-bag-shopping fs-5"></i>
                             <span style={{fontSize: '10px'}}>Cart</span>
-                         </a>
+                         </Link>
                     </div>
                 </div>
             </div>
