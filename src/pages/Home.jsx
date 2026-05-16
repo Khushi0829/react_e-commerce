@@ -3,6 +3,7 @@ import React from 'react';
 import HeroSlider from '../components/HeroSlider';
 import DealsSection from '../components/DealsSection';
 import Services from '../components/Services';
+import Categories from '../components/Categories';
 // import Footer from '../components/Footer';
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
             <HeroSlider />
             <DealsSection />
             <Services />
+            <Categories />
         </>
     );
 };

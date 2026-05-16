@@ -118,9 +118,12 @@ const DealsSection = () => {
             <div className="deals-grid">
                 {deals.map((deal) => (
                     <div key={deal.id} className="deal-card">
+
                         <div className="deal-image-wrapper">
                             <img src={deal.image} alt={deal.name} className="deal-image" />
+
                             <div className="deal-badge">{deal.discount}</div>
+                            
                             <div className="deal-overlay">
                                 <button className="add-to-cart-btn">Add to Bag</button>
                                 <div className="deal-quick-actions">
