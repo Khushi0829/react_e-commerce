@@ -19,7 +19,7 @@ const Login = () => {
                         <div className="form-group">
                             <input type="password" placeholder="Enter Password" required />
                         </div>
-                        <p className="terms">By continuing, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+                        <p className="terms">By continuing, you agree to our <a href="/">Terms of Use</a> and <a href="/">Privacy Policy</a>.</p>
                         <button type="submit" className="auth-btn">Login</button>
                     </form>
                     <div className="auth-footer">
