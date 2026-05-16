@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// Deployment trigger comment
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
